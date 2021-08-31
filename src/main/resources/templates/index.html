@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<h1>This is the frontpage</h1>
+
+
+<form action="/createProduct" method="POST">
+    <div>
+        <h1>Create Product</h1>
+    </div>
+    <div>
+        <input name="product_name" placeholder='Product Name'  type='text' required>
+
+        <input name="product_price" placeholder='Product Price'  type='text' required>
+    </div>
+    <div>
+        <button type="submit">
+            Submit
+        </button>
+    </div>
+
+    <div>
+        <tbody>
+        <tr th:each="product : ${session.products}">
+            <td th:text="${product.product_name}"></td>
+            <td th:text="${product.product_price}"></td>
+            <!--                        reserve ends/-->
+        </tr>
+        </tbody>
+    </div>
+</form>
+
+
+
+</body>
+</html>
