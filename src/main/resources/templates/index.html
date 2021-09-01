@@ -27,7 +27,7 @@
 
     <div>
         <tbody>
-        <tr th:each="product : ${session.products}">
+        <tr th:each="product : ${session.product}">
             <td th:text="${product.product_name}"></td>
             <td th:text="${product.product_price}"></td>
             <!--                        reserve ends/-->

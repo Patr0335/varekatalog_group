@@ -29,6 +29,9 @@ public class MyController {
         String product_price = request.getParameter("product_price");
         Product product = new Product(product_name,Integer.valueOf(product_price));
         productMapper.createProduct(product);
+        request.setAttribute("product", product,WebRequest.SCOPE_SESSION);
+        request.setAttribute("product_name",product.getProduct_name(),WebRequest.SCOPE_SESSION);
+        request.setAttribute("product_price", product.getProduct_price(), WebRequest.SCOPE_SESSION);
         return "index";
 
     }
